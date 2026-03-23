@@ -1,8 +1,6 @@
 import { useState } from 'react';
 import { Send, Copy, Check, Mail, Sparkles, MessageSquare, User } from 'lucide-react';
 
-const API_KEY = import.meta.env.VITE_ANTHROPIC_API_KEY;
-
 export default function EmailWriterApp() {
   const [rawThoughts, setRawThoughts] = useState('');
   const [tone, setTone] = useState('professional');
@@ -42,19 +40,12 @@ Instructions:
 
 Respond with ONLY the email body content. No explanations or extra text.`;
 
-      const res = await fetch('https://api.anthropic.com/v1/messages', {
+      const res = await fetch('/api/generate', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'x-api-key': API_KEY,
-          'anthropic-version': '2023-06-01',
-          'anthropic-dangerous-allow-browser': 'true',
         },
-        body: JSON.stringify({
-          model: 'claude-sonnet-4-20250514',
-          max_tokens: 1000,
-          messages: [{ role: 'user', content: prompt }],
-        }),
+        body: JSON.stringify({ prompt }),
       });
 
       const data = await res.json();
