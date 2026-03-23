@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Send, Copy, Check, Mail, Sparkles, MessageSquare, User } from 'lucide-react';
 
-const API_KEY = import.meta.env.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;
+const API_KEY = import.meta.env.VITE_ANTHROPIC_API_KEY;
 
 export default function EmailWriterApp() {
   const [rawThoughts, setRawThoughts] = useState('');
