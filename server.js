@@ -32,7 +32,6 @@ app.post('/api/generate', async (req, res) => {
       return res.status(response.status).json(data);
     }
 
-    // Normalize to match the shape App.jsx expects
     res.json({ content: [{ text: data.choices[0].message.content }] });
   } catch (err) {
     console.error('Proxy error:', err);
@@ -40,7 +39,6 @@ app.post('/api/generate', async (req, res) => {
   }
 });
 
-// Serve built React app in production
 app.use(express.static(path.join(__dirname, 'dist')));
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'dist', 'index.html'));
