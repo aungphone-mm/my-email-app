@@ -49,10 +49,15 @@ Respond with ONLY the email body content. No explanations or extra text.`;
       });
 
       const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.error?.message || data.error || `API error ${res.status}`);
+      }
+
       setGeneratedEmail(data.content[0].text.trim());
     } catch (err) {
       console.error(err);
-      setGeneratedEmail('Sorry, there was an error generating your email. Please try again.');
+      setGeneratedEmail(`Error: ${err.message}`);
     } finally {
       setIsLoading(false);
     }
