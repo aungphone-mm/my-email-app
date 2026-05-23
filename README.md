@@ -1,16 +1,42 @@
-# React + Vite
+# Aung Phone Email Writing Assistant
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An AI-powered email writing assistant that transforms your raw thoughts into polished, professional emails.
 
-Currently, two official plugins are available:
+🌐 **Live demo**: [my-email-app-eta.vercel.app](https://my-email-app-eta.vercel.app)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+- Transform rough thoughts into well-crafted emails
+- Six tone options: Professional, Warm, Concise, Formal, Casual, Persuasive
+- Optional context input for writing reply emails
+- Copy to clipboard
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tech Stack
 
-## Expanding the ESLint configuration
+- **Frontend**: React + Vite, Tailwind CSS, lucide-react
+- **Backend**: Express proxy server
+- **AI**: Large language model API
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Getting Started
+
+1. Clone the repo and install dependencies:
+   ```bash
+   npm install
+   ```
+
+2. Create a `.env` file in the project root with your API key:
+   ```
+   GROQ_API_KEY=your_api_key_here
+   ```
+
+3. Run the app:
+   ```bash
+   npm run dev
+   ```
+
+   - Frontend: `http://localhost:5173`
+   - Backend: `http://localhost:3001`
+
+## Deployment
+
+The app is deployed on Vercel. Set the API key in your Vercel project's environment variables under **Settings → Environment Variables**.
