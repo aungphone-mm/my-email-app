@@ -15,7 +15,7 @@ An AI-powered email writing assistant that transforms your raw thoughts into pol
 
 - **Frontend**: React + Vite, Tailwind CSS, lucide-react
 - **Backend**: Express proxy server
-- **AI**: Large language model API
+- **AI**: Groq API (`openai/gpt-oss-120b`)
 
 ## Getting Started
 
